@@ -5,6 +5,7 @@ class BooksController < ApplicationController
   end
 
   def create
+    @books = Book.all.order(id: "DESC")
     @book = Book.new(books_params)
     @book.user_id = current_user.id
     if @book.save
@@ -20,7 +21,6 @@ class BooksController < ApplicationController
     @user = current_user
   end
 
-
   def index
     @book = Book.new
     @books = Book.all.order(id: "DESC")
@@ -30,6 +30,10 @@ class BooksController < ApplicationController
   end
   def edit
     @book = Book.find(params[:id]) 
+    # if @book.user 
+    if @book.user.id != current_user.id
+      redirect_to books_path
+    end
   end
   def update
     @book = Book.find(params[:id])

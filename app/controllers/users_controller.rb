@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def index
     @users = User.all.order(id: "DESC")
+    @user = current_user 
     @book = Book.new
     @books = Book.all
   end
@@ -13,6 +14,9 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    if @user.id != current_user.id
+      redirect_to users_path
+    end
   end
 
   def update
@@ -25,4 +29,6 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :image, :self_intro)
   end
+ 
+  
 end
