@@ -50,7 +50,7 @@
   <tr>
     <td><%= attachment_image_tag u, :image, :fill, 60, 60, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%></td>
     <td><%=  u.name  %></td>
-    <td><%= link_to "show detail", user_path(u) class: "user_#{u.id}" %></td>
+    <td><%= link_to "show detail", user_path(u), class: "user_#{u.id}" %></td>
   </tr>
  <%end%>
  </tbody>
