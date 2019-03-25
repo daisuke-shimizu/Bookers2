@@ -12,7 +12,7 @@ class BooksController < ApplicationController
     if @book.save
       flash[:notice] = "successfully! it has uploaded."
       redirect_to book_path(@book)
-    else
+    else 
       render :index
     end
   end
