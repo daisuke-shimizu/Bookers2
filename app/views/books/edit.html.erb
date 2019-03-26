@@ -8,13 +8,13 @@
     <div class="form-group has-icon">
         <label class="control-label sr-only" for="inputEmail">Title</label>
         <%= f.text_field :title, autofocus: true, class:"form-control book_title", id:"inputEmail", placeholder:"本の題名"%>
-        <span class="fa fa-user form-control-icon" aria-hidden="true"></span>
+        
     </div>
     <h4>Opinion</h4>
     <div class="form-group has-icon">
         <label class="control-label sr-only" for="inputEmail">Self_Introduction</label>
         <%= f.text_field :opinion, autofocus: true, class:"form-control book_body", id:"inputEmail", placeholder:"本の感想"%>
-        <span class="fa fa-user form-control-icon" aria-hidden="true"></span>
+        
     </div>
                          
     <%= f.submit "Update Book", class:"btn btn-primary col-xs-12" %>
