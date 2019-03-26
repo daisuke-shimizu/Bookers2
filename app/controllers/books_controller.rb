@@ -25,7 +25,7 @@ class BooksController < ApplicationController
   def index
     @book = Book.new
     @books = Book.all.order(id: "DESC")
-    @user = current_user
+    #@user = current_user
   end
   def start
   end
